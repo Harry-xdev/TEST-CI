@@ -42,13 +42,35 @@ function findOppositeNumber() {
         oppositeN = x - 10;
         alert(`Số đối của ${inputNumber} là ${oppositeN}`);
     }
-}
+}   
 
-// FUNcTION GỘP CHUỖI
-function merge() {
-    let str1 = document.getElementById("string1").value;
-    let str2 = document.getElementById("string2").value;
-    console.log(str1)
-    console.log(str2)
+// FUNCTION GỘP CHUỖI
+function merge2Str() {
+    let str1 = document.getElementById("s1").value;
+    let str2 = document.getElementById("s2").value;
 
-}
+    for (let i = 0; i < str1.length; i++){
+        console.log(str1[i]);
+    }
+
+    for (let i = 0; i < str2.length; i++){
+        console.log(str2[i]);
+    }
+
+    
+    let array1 = Array.from(str1, function(e) {
+       return e;
+    })
+    let array2 = Array.from(str2, function(e) {
+        return e;
+     })
+    mergedArray = [];
+
+    for (i=0; i<=array1.length; i++) {
+        mergedArray.push(array1.slice([i],i+1) + array2.slice([i],i+1));
+    }
+    console.log(mergedArray);
+    mergedArray = mergedArray.join('');
+    console.log(mergedArray)
+    alert(`Chuỗi gộp là: ${mergedArray}`);
+}   
