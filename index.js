@@ -73,4 +73,55 @@ function merge2Str() {
     mergedArray = mergedArray.join('');
     console.log(mergedArray)
     alert(`Chuỗi gộp là: ${mergedArray}`);
-}   
+}
+
+// FUNCTION QUAY SỐ
+function random() {
+    let randomNumber = Math.floor(Math.random() * 10);
+    randomNumber = parseInt(randomNumber);
+
+    let luckyNumber = document.getElementById("luckyNumber");
+    luckyNumber.innerHTML = randomNumber;
+
+    let userNumber = document.getElementById("userNumber").value;
+    userNumber = parseInt(userNumber);
+    if (userNumber > 9 || userNumber < 0) {
+        alert(`You must choose number from 0 to 9!`);
+        return false;
+    }
+
+    let userChooses = document.getElementById("userChooses");
+    userChooses.innerHTML = userNumber;
+
+    if (userNumber == randomNumber) {
+        alert(`You won the lottery!`);
+    } else {
+        alert(`You lose!`)
+    }
+
+}
+
+let count = 0;
+count = parseInt(count);
+
+function count2() {
+    count = count + 1;
+    console.log(count);
+    console.log(typeof count);
+
+    if (count == 1) {
+        document.getElementById("count").innerHTML = "2"
+    }
+    if (count == 2) {
+        document.getElementById("count").innerHTML = "1"
+    }
+    if (count == 3) {
+        document.getElementById("count").innerHTML = "0"
+        document.getElementById("btn").style.display ="none"
+        document.getElementById("luotQuay").innerHTML = "Hết lượt"
+    }
+}
+
+
+
+
